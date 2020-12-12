@@ -56,6 +56,9 @@ public class Colour {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof Colour)) {
+            return false;
+        }
         final Colour colourObj = (Colour) obj;
         return this.getColourModel().equals(colourObj.getColourModel()) && this.getNumberOne() == colourObj.getNumberOne() && this.getNumberTwo() == colourObj.getNumberTwo() && this.getNumberThree() == colourObj.getNumberThree();
     }

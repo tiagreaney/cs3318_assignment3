@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ColourTest {
 
@@ -26,5 +27,13 @@ public class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> {
             colourObj1.addColours(colourObj3);
         });
+    }
+
+    @Test
+    public void TestEqualityOfColours() {
+        Colour colourObj1 = new Colour(123, 234, 132);
+        Colour colourObj2 = new Colour(103, 234, 132);
+
+        assertTrue(colourObj1.equals(colourObj2));
     }
 }
