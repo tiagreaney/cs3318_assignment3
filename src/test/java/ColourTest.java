@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ColourTest {
 
@@ -35,5 +34,14 @@ public class ColourTest {
         Colour colourObj2 = new Colour(123, 234, 132);
 
         assertTrue(colourObj1.equals(colourObj2));
+    }
+
+    @Test
+    public void TestComponentValuesInitiallySetCorrectly() {
+        Colour colourObj1 = new Colour(123, 234, 132);
+        assertEquals("HSL", colourObj1.getColourModel());
+        assertEquals(122, colourObj1.getNumberOne());
+        assertEquals(238, colourObj1.getNumberTwo());
+        assertEquals(135, colourObj1.getNumberThree());
     }
 }
