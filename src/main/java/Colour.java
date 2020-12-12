@@ -60,15 +60,16 @@ public class Colour {
         return this.getColourModel().equals(colourObj.getColourModel()) && this.getNumberOne() == colourObj.getNumberOne() && this.getNumberTwo() == colourObj.getNumberTwo() && this.getNumberThree() == colourObj.getNumberThree();
     }
 
-    public Colour addColours(Colour colourObj1, Colour colourObj2){
-        if (colourObj1.getColourModel().equals(colourObj2.getColourModel())){
-            int newRed = colourObj1.getNumberOne() + colourObj2.getNumberOne();
-            int newGreen = colourObj1.getNumberTwo() + colourObj2.getNumberTwo();
-            int newBlue = colourObj1.getNumberThree() + colourObj2.getNumberThree();
+    public Colour addColours(Colour colourObj){
+        if (this.getColourModel().equals(colourObj.getColourModel())){
+            int newRed = this.getNumberOne() + colourObj.getNumberOne();
+            int newGreen = this.getNumberTwo() + colourObj.getNumberTwo();
+            int newBlue = this.getNumberThree() + colourObj.getNumberThree();
             if ((newRed <= 255) && (newGreen <= 255) && (newBlue <= 255)){
-                return new Colour(colourObj1.getColourModel(), newRed, newGreen, newBlue);
+                return new Colour(this.getColourModel(), newRed, newGreen, newBlue);
             }
+            throw new IllegalArgumentException("Component values out of range");
         }
-        return null;
+        throw new IllegalArgumentException("Colour models are not the same");
     }
 }
