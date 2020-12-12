@@ -32,7 +32,7 @@ public class ColourTest {
     @Test
     public void TestEqualityOfColours() {
         Colour colourObj1 = new Colour(123, 234, 132);
-        Colour colourObj2 = new Colour(103, 234, 132);
+        Colour colourObj2 = new Colour(123, 234, 132);
 
         assertTrue(colourObj1.equals(colourObj2));
     }
