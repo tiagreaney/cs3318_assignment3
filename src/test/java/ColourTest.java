@@ -39,9 +39,6 @@ public class ColourTest {
     @Test
     public void TestComponentValuesInitiallySetCorrectly() {
         Colour colourObj1 = new Colour(123, 234, 132);
-        assertEquals("RGB", colourObj1.getColourModel());
-        assertEquals(123, colourObj1.getNumberOne());
-        assertEquals(234, colourObj1.getNumberTwo());
-        assertEquals(132, colourObj1.getNumberThree());
+        assertTrue((colourObj1.getColourModel().equals("RGB")) && (colourObj1.getNumberOne() == 123) && (colourObj1.getNumberTwo() == 234) && (colourObj1.getNumberThree() == 132));
     }
 }
